@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Transparencia en acción</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+        }
+
+        .descripcion {
+            margin: 20px;
+            font-size: 18px;
+        }
+
+        button {
+            display: block;
+            width: 250px;
+            margin: 10px auto;
+            padding: 12px;
+            font-size: 16px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .contenido {
+            margin: 20px;
+        }
+
+        iframe {
+            width: 80%;
+            height: 500px;
+            border: none;
+        }
+
+        img {
+            width: 300px;
+            margin: 10px;
+            border-radius: 10px;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding: 15px;
+            background-color: #2c3e50;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Transparencia en acción</h1>
+</header>
+
+<div class="descripcion">
+    Este espacio permitirá a los estudiantes consultar el uso de los recursos recolectados, evidencias y avances de los acuerdos escolares.
+</div>
+
+<button onclick="mostrarSeccion('recaudo')">Dinero recolectado</button>
+<button onclick="mostrarSeccion('evidencias')">Evidencias de inversión</button>
+<button onclick="mostrarSeccion('acuerdos')">Acuerdos escolares</button>
+
+<div class="contenido" id="contenido">
+    <p>Selecciona una opción para ver la información.</p>
+</div>
+
+<footer>
+    Página gestionada por la Contraloría estudiantil
+</footer>
+
+<script>
+function mostrarSeccion(seccion) {
+    let contenido = document.getElementById("contenido");
+
+    if (seccion === "recaudo") {
+        contenido.innerHTML = '<h2>Dinero recolectado</h2><iframe src="documentos/recaudo.pdf"></iframe>';
+    }
+
+    if (seccion === "evidencias") {
+        contenido.innerHTML = '<h2>Evidencias de inversión</h2><img src="imagenes/evidencia1.jpg"><img src="imagenes/evidencia2.jpg">';
+    }
+
+    if (seccion === "acuerdos") {
+        contenido.innerHTML = '<h2>Acuerdos escolares</h2><iframe src="documentos/acuerdos.pdf"></iframe>';
+    }
+}
+</script>
+
+</body>
+</html>
